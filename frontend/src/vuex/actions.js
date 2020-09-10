@@ -554,8 +554,6 @@ export default {
 		// var params = new URLSearchParams();
 		// params.append('code', res.code)
 		// params.append('email', res.email)
-		console.log(res.code)
-		console.log(res.email)
 		axios.post(`${SERVER_URL}/api/user/pwd?code=${res.code}&email=${res.email}`)
 			.then((response) => {
 				context.commit('getPwdToken', response.data)
@@ -631,7 +629,6 @@ export default {
 		})
 	},
 	postDate (context, info) {
-		console.log(info)
 		for (let i = 0; i < info.date.length; i++) {
 			const dateinfo = {
 				date : info.date[i],
